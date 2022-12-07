@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pl-PL">
+<head>
+    <div th:replace="fragments/head"></div>
+    <script type="application/javascript" src="../js/validationSongForm.js"></script>
+</head>
+<body>
+<header>
+    <h1>SpotSong</h1>
+    <img src="../../images/logo.png" alt="logo" width="100" height="100" >
+</header>
+<div th:replace="fragments/navbar"></div>
+
+<main>
+    <h2>Nowy utwór</h2>
+    <form class="form">
+        <label for="songName">Nazwa: <span class="symbol-required">*</span></label>
+        <input class="error-input" type="text" name="songName" id="songName" required>
+        <span id="errorSongName" class="errors-text">Pole jest wymagane</span>
+
+        <label for="duration">Czas trwania: <span class="symbol-required">*</span></label>
+        <input class="error-input"  type="time" step="1" name="duration" id="duration" required>
+        <span id="errorDuration" class="errors-text"></span>
+
+        <label for="author">Autor: <span class="symbol-required">*</span></label>
+        <input class="error-input"  type="text" name="author" id="author" required>
+        <span id="errorAuthor" class="errors-text">Pole jest wymagane</span>
+
+        <label for="album">Album: </label>
+        <input type="text" name="album" id="album" required>
+        <span id="errorAlbum"></span>
+
+        <label for="lyrics">Link do tekstu: <span class="symbol-required">*</span></label>
+        <input class="error-input"  type="text" name="lyrics" id="lyrics" required>
+        <span id="lyricsError" class="errors-text">Pole jest wymagane</span>
+        <div>
+            <br>
+            <input type="submit" class="form-button-submit" value="Dodaj">
+            <a href="/song/list" class="form-button-cancel" >Anuluj</a>
+            <p class="errors-text" id="errorsSummary">Formularz zawiera błędy</p>
+        </div>
+
+    </form>
+
+</main>
+
+<footer>
+    Tomasz Pietrzyk, s22733
+</footer>
+
+</body>
+</html>

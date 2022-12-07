@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pl-PL">
+<head>
+    <div th:replace="fragments/head"></div>
+    <script type="application/javascript" src="../js/validationAuthorForm.js"></script>
+</head>
+<body>
+    <header>
+        <h1>SpotSong</h1>
+        <img src="../../images/logo.png" alt="logo" width="100" height="100" >
+    </header>
+    <div th:replace="fragments/navbar"></div>
+
+    <main>
+        <h2>Lista autorów</h2>
+        <table class="table-list">
+            <thead>
+                <tr>
+                    <th>Imie</th>
+                    <th>Nazwisko</th>
+                    <th>Pseudonim</th>
+                    <th class="birthday">Data urodzenia</th>
+                    <th>Akcje</th>
+                </tr>
+            </thead>
+            <tbody>
+            <tr th:each="author: ${authors}">
+                <td><span th:text="${author.firstName}"></span></td>
+                <td><span th:text="${author.lastName}"></span></td>
+                <td><span th:text="${author.nickName}"></span></td>
+                <td><span th:text="${author.birthday}"></span></td>
+                <td>
+                    <ul class="list-actions">
+                        <li>
+                            <a th:href="@{details/{id}(id=${author.id})}" class="list-actions-button-details">Szczegóły</a>
+                        </li>
+                        <li>
+                            <a th:href="@{form-edit/{id}(id=${author.id})}" class="list-actions-button-edit">Edytuj</a>
+                        </li>
+                        <li>
+                            <a th:href="@{delete/{id}(id=${author.id})}" class="list-actions-button-delete">Usuń</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+        <p><a href="form"  class="button-add">Dodaj nowego artyste</a></p>
+    </main>
+
+    <footer>
+        Tomasz Pietrzyk, s22733
+    </footer>
+
+</body>
+</html>

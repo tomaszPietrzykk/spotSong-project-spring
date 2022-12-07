@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pl-PL">
+<head>
+    <div th:replace="fragments/head"></div>
+    <script type="application/javascript" src="../js/validationAuthorForm.js"></script>
+</head>
+<body>
+<header>
+    <h1>SpotSong</h1>
+    <img src="../../images/logo.png" alt="logo" width="100" height="100" >
+</header>
+<div th:replace="fragments/navbar"></div>
+
+<main>
+    <h2>Nowy utwór</h2>
+    <form class="form">
+        <label for="authorName">Imie: <span class="symbol-required">*</span></label>
+        <input class="error-input"  type="text" name="authorName" id="authorName"  required>
+        <span id="errorAuthorName" class="errors-text">Pole jest wymagane</span>
+
+        <label for="authorLastName">Nazwisko: <span class="symbol-required">*</span></label>
+        <input class="error-input"  type="text" step="1" name="authorLastName" id="authorLastName" required>
+        <span id="errorAuthorLastName" class="errors-text">Pole jest wymagane</span>
+
+        <label for="nickname">Pseudonim: </label>
+        <input class="error-input"  type="text" name="nickname" id="nickname">
+        <span id="errorNickname" class="errors-text"></span>
+
+        <label for="dateOfBirth">Data urodzenia: <span class="symbol-required">*</span></label>
+        <input type="date" name="dateOfBirth" id="dateOfBirth" required>
+        <span id="errorDateOfBirth" class="errors-text">Pole jest wymagane</span>
+        <div>
+            <br>
+            <input type="submit" class="form-button-submit" value="Dodaj">
+            <a href="/author/list" class="form-button-cancel" >Anuluj</a>
+            <p class="errors-text" id="errorsSummary">Formularz zawiera błędy</p>
+        </div>
+    </form>
+
+</main>
+
+<footer>
+    Tomasz Pietrzyk, s22733
+</footer>
+
+</body>
+</html>

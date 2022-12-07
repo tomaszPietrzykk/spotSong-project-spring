@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="pl-PL">
+<head>
+    <div th:replace="fragments/head"></div>
+    <script type="application/javascript" src="../js/validationSongForm.js"></script>
+</head>
+<body>
+<header>
+    <h1>SpotSong</h1>
+    <img src="../../images/logo.png" alt="logo" width="100" height="100" >
+</header>
+<div th:replace="fragments/navbar"></div>
+<main>
+    <h2>Szczegóły utworu</h2>
+    <form class="form">
+        <label for="songName">Nazwa: <span class="symbol-required">*</span></label>
+        <input type="text" name="songName" id="songName" th:value="${song.name}" disabled>
+        <span id="errorSongName"></span>
+
+        <label for="author">Autor: <span class="symbol-required">*</span></label>
+        <input type="text" name="author" id="author" th:value="${song.author.nickName}" disabled>
+        <span id="errorAuthor"></span>
+
+        <label for="album">Album: <span class="symbol-required">*</span></label>
+        <input type="text" name="album" id="album" th:value="${song.album.name}" disabled>
+        <span id="errorAlbum"></span>
+    </form>
+    <ul>
+        <li>
+            <label><a th:href="${song.lyrics}" th:target="_blank">Teskt</a></label>
+        </li>
+        <li>
+            <label> Czas trwania: <span th:text="${song.durationTime}"></span></label>
+        </li>
+    </ul>
+
+    <h2>Szczegóły albumu</h2>
+    <table class="table-list">
+        <thead>
+        <tr>
+            <th>Nazwa</th>
+            <th>Data wydania</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td><a th:href="@{/album/details/{id}(id=${song.album.id})}"><span th:text="${song.album.name}"></span></a></td>
+            <td><span th:text="${song.album.releaseDate}"></span></td>
+        </tr>
+        </tbody>
+    </table>
+
+    <h2>Szczegóły autora</h2>
+    <table>
+        <thead>
+        <tr>
+            <th>Imie</th>
+            <th>Nazwisko</th>
+            <th>Wiek</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td><span th:text="${song.author.firstName}"></span></td>
+            <td><span th:text="${song.author.lastName}"></span></td>
+            <td><span th:text="${song.author.birthday}"></span></td>
+        </tr>
+        </tbody>
+    </table>
+
+</main>
+
+<footer>
+    Tomasz Pietrzyk, s22733
+</footer>
+
+</body>
+</html>

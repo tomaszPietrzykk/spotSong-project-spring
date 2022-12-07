@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pl-PL">
+<head>
+    <div th:replace="fragments/head"></div>
+    <script type="application/javascript" src="../js/validationSongForm.js"></script>
+</head>
+<body>
+<header>
+    <h1>SpotSong</h1>
+    <img src="../../images/logo.png" alt="logo" width="100" height="100" >
+</header>
+<div th:replace="fragments/navbar"></div>
+
+<main>
+    <h2>Edycja utworu</h2>
+    <form class="form">
+        <label for="songName">Nazwa: <span class="symbol-required">*</span></label>
+        <input type="text" name="songName" id="songName" th:value="${song.name}">
+        <span id="errorSongName"></span>
+
+        <label for="duration">Czas trwania: <span class="symbol-required">*</span></label>
+        <input type="time" step="1" name="duration" id="duration" th:value="${song.durationTime}" required>
+        <span id="errorDuration"></span>
+
+        <label for="author">Autor: <span class="symbol-required">*</span></label>
+        <input type="text" name="author" id="author" th:value="${song.author.nickName}" required>
+        <span id="errorAuthor"></span>
+
+        <label for="album">Album: <span class="symbol-required">*</span></label>
+        <input type="text" name="album" id="album" th:value="${song.album.name}" required>
+        <span id="errorAlbum"></span>
+
+        <label for="lyrics">Link do tekstu: <span class="symbol-required">*</span></label>
+        <input type="text" name="lyrics" id="lyrics" th:value="${song.lyrics}" required>
+        <span id="lyricsError"></span>
+        <div>
+            <br>
+            <input type="submit" class="form-button-submit" value="Dodaj">
+            <a href="/song/list" class="form-button-cancel" >Anuluj</a>
+            <p id="errorsSummary"></p>
+        </div>
+
+    </form>
+
+</main>
+
+<footer>
+    Tomasz Pietrzyk, s22733
+</footer>
+
+</body>
+</html>
