@@ -13,7 +13,7 @@
 
 <main>
     <h2>Edycja utworu</h2>
-    <form class="form">
+    <form th:action="@{/song/update/{id}(id=${song.id})}" class="form" method="post">
         <label for="songName">Nazwa: <span class="symbol-required">*</span></label>
         <input type="text" name="songName" id="songName" th:value="${song.name}">
         <span id="errorSongName"></span>
@@ -35,7 +35,7 @@
         <span id="lyricsError"></span>
         <div>
             <br>
-            <input type="submit" class="form-button-submit" value="Dodaj">
+            <input type="submit" class="form-button-submit" value="Zapisz">
             <a href="/song/list" class="form-button-cancel" >Anuluj</a>
             <p id="errorsSummary"></p>
         </div>

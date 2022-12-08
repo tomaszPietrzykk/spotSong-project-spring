@@ -24,6 +24,7 @@ function validateForm() {
     }
 
     if (!checkRequired(releaseDate.value)) {
+        console.log(releaseDate.value);
         valid = false;
         releaseDate.classList.add("error-input");
         errorReleaseDate.innerText = "Pole jest wymagane";
@@ -31,7 +32,7 @@ function validateForm() {
         console.log(checkDateFormat(releaseDate.value));
         valid = false;
         releaseDate.classList.add("error-input");
-        errorReleaseDate.innerText = "Data powinna być zapisana w formacie dd.MM.rrrr ALBUM";
+        errorReleaseDate.innerText = "Data powinna być zapisana w formacie dd.MM.rrrr dasdasdas";
     }
 
     if (!checkRequired(author.value)) {

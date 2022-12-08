@@ -47,6 +47,12 @@ public class SongController {
         return "redirect:/song/list";
     }
 
+    @PostMapping("/update/{id}")
+    public String update(@PathVariable String id, @ModelAttribute SongRequest songRequest) {
+        songService.update(id, songRequest);
+        return "redirect:/song/list";
+    }
+
     @PostMapping("/add")
     public String add(@ModelAttribute SongRequest songRequest){
         songService.save(songRequest);

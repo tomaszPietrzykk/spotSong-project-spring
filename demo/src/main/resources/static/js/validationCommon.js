@@ -31,7 +31,12 @@ function  checkTextLengthRange(value, min, max){
 }
 
 function checkDateFormat(value){
-    return value instanceof Date;
+    try {
+        Date.parse(value);
+        return true;
+    } catch (e) {
+        return false;
+    }
 }
 
 function checkHttpUrl(value) {

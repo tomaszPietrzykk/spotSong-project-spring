@@ -17,7 +17,7 @@ public class AlbumController {
 
     private final AlbumService albumService;
 
-    @RequestMapping({"/list"})
+    @RequestMapping("/list")
     public String getAlbumPage(Model model) {
 
         List<AlbumDto> all = albumService.findAll();

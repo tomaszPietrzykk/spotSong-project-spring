@@ -1,13 +1,13 @@
 <component name="libraryTable">
   <library name="Maven: org.thymeleaf:thymeleaf-spring6:3.1.0.RELEASE">
     <CLASSES>
-      <root url="jar://$MAVEN_REPOSITORY$/org/thymeleaf/thymeleaf-spring6/3.1.0.RELEASE/thymeleaf-spring6-3.1.0.RELEASE.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../../../bec/tools/maven3.6.3/local/org/thymeleaf/thymeleaf-spring6/3.1.0.RELEASE/thymeleaf-spring6-3.1.0.RELEASE.jar!/" />
     </CLASSES>
     <JAVADOC>
-      <root url="jar://$MAVEN_REPOSITORY$/org/thymeleaf/thymeleaf-spring6/3.1.0.RELEASE/thymeleaf-spring6-3.1.0.RELEASE-javadoc.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../../../bec/tools/maven3.6.3/local/org/thymeleaf/thymeleaf-spring6/3.1.0.RELEASE/thymeleaf-spring6-3.1.0.RELEASE-javadoc.jar!/" />
     </JAVADOC>
     <SOURCES>
-      <root url="jar://$MAVEN_REPOSITORY$/org/thymeleaf/thymeleaf-spring6/3.1.0.RELEASE/thymeleaf-spring6-3.1.0.RELEASE-sources.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../../../bec/tools/maven3.6.3/local/org/thymeleaf/thymeleaf-spring6/3.1.0.RELEASE/thymeleaf-spring6-3.1.0.RELEASE-sources.jar!/" />
     </SOURCES>
   </library>
 </component>
